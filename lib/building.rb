@@ -21,8 +21,8 @@ class Building
     rent_total = @units.sum do |apartment|
       apartment.monthly_rent
     end
-    renter_total = @units.count
-    rent_total.to_f / renter_total
+    renter_count = @units.count
+    rent_total.to_f / renter_count
   end
 
   def rented_units
@@ -39,10 +39,22 @@ class Building
     end.renter
   end
 
+  # def units_by_number_of_bedrooms
+  #   result = Hash.new { |hash, key| hash[key] = [] }
+  #   @units.each do |apartment|
+  #     result[apartment.bedrooms] << apartment.number
+  #   end
+  #   result
+  # end
+
   def units_by_number_of_bedrooms
-    result = Hash.new { |hash, key| hash[key] = [] }
+    result = {}
     @units.each do |apartment|
-      result[apartment.bedrooms] << apartment.number
+      if result[apartment.bedrooms]
+        result[apartment.bedrooms] << apartment.number
+      else
+        result[apartment.bedrooms] = [apartment.number]
+      end
     end
     result
   end
