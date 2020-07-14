@@ -28,7 +28,7 @@ class Building
   def rented_units
     result = []
     @units.each do |apartment|
-      result << apartment if !apartment.renter.nil?
+      result << apartment unless apartment.renter.nil?
     end
     result
   end
