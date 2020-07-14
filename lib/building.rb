@@ -9,4 +9,12 @@ class Building
     @units << unit
   end
 
+  def renters
+    result = []
+    @units.each do |apartment|
+      result << apartment.renter.name unless apartment.renter.nil?
+    end
+    result
+  end
+
 end
