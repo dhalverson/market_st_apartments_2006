@@ -95,7 +95,6 @@ class BuildingTest < Minitest::Test
     unit3.add_renter(renter3)
 
     assert_equal renter2, building.renter_with_highest_rent
-    building.add_unit(unit4)
   end
 
   def test_it_can_return_units_by_number_of_bedrooms
