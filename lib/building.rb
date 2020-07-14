@@ -75,5 +75,4 @@ class Building
     end
     result
   end
-
 end

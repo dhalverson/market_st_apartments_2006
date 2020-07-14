@@ -15,5 +15,4 @@ class RenterTest < Minitest::Test
 
     assert_equal "Jessie", renter1.name
   end
-
 end
