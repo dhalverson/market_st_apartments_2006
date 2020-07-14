@@ -56,4 +56,12 @@ class Building
     result
   end
 
+  def rooms_by_renter
+    result = {}
+    rented_units.each do |apartment|
+      result[apartment.renter] = {bathrooms: apartment.bathrooms, bedrooms: apartment.bedrooms}
+    end
+    result
+  end
+
 end
