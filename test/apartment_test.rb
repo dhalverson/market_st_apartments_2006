@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/renter'
-reqiore './lib/apartment'
+require './lib/apartment'
 
 class ApartmentTest < Minitest::Test
 
