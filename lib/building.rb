@@ -25,4 +25,12 @@ class Building
     rent_total.to_f / renter_total
   end
 
+  def rented_units
+    result = []
+    @units.each do |apartment|
+      result << apartment if !apartment.renter.nil?
+    end
+    result
+  end
+
 end
