@@ -33,4 +33,10 @@ class Building
     result
   end
 
+  def renter_with_highest_rent
+    rented_units.max_by do |apartment|
+      apartment.monthly_rent
+    end.renter
+  end
+
 end
